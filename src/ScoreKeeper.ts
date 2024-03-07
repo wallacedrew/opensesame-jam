@@ -31,9 +31,12 @@ export class ScoreKeeper {
     public scoreTeamB1(): void {
         this.teamBScore++;
     }
-
-
+    
     public scoreTeamB2(): void {
-        this.teamBScore += 2;
-    }
+      this.teamBScore += 2;
+  }
+  
+    public scoreTeamB3(): void {
+      this.teamBScore += 3;
+  }
 }

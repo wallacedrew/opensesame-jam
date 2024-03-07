@@ -59,4 +59,13 @@ describe('ScoreKeeper', () => {
 
         expect(currentScore).toBe('003:000');
     });
+
+    it('adds three to team B score', () => {
+
+        scoreboard.scoreTeamB3();
+
+        const currentScore = scoreboard.getScore();
+
+        expect(currentScore).toBe('000:003');
+    });
 });
