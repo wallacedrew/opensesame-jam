@@ -28,4 +28,14 @@ describe('ScoreKeeper', () => {
 
         expect(currentScore).toBe('000:001');
     });
+
+    it('adds two to team A score', () => {
+        const scoreboard = new ScoreKeeper();
+
+        scoreboard.scoreTeamA2();
+
+        const currentScore = scoreboard.getScore();
+
+        expect(currentScore).toBe('002:000');
+    });
 });
