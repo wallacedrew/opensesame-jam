@@ -1,5 +1,8 @@
 export class ScoreFormatter {
     public formatScore(score: number): string {
-        return '001';
+        if(score > 9) {
+            return `0${score}`
+        }
+        return `00${score}`;
     }
 }
