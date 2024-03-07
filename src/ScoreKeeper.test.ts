@@ -1,8 +1,14 @@
 import {ScoreKeeper} from './ScoreKeeper';
 
 describe('ScoreKeeper', () => {
+
+    let scoreboard;
+
+    beforeEach(() => {
+        scoreboard = new ScoreKeeper();
+    });
+
     it('outputs the initial score', () => {
-        const scoreboard = new ScoreKeeper();
 
         const currentScore = scoreboard.getScore();
 
@@ -10,7 +16,6 @@ describe('ScoreKeeper', () => {
     });
 
     it('adds one to team A score', () => {
-        const scoreboard = new ScoreKeeper();
 
         scoreboard.scoreTeamA1();
 
@@ -20,7 +25,6 @@ describe('ScoreKeeper', () => {
     });
 
     it('adds one to team B score', () => {
-        const scoreboard = new ScoreKeeper();
 
         scoreboard.scoreTeamB1();
 
@@ -30,7 +34,6 @@ describe('ScoreKeeper', () => {
     });
 
     it('adds two to team A score', () => {
-        const scoreboard = new ScoreKeeper();
 
         scoreboard.scoreTeamA2();
 
@@ -40,7 +43,6 @@ describe('ScoreKeeper', () => {
     });
 
     it('adds two to team B score', () => {
-        const scoreboard = new ScoreKeeper();
 
         scoreboard.scoreTeamB2();
 
