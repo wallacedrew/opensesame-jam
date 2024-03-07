@@ -9,10 +9,12 @@ describe('ScoreKeeper', () => {
         expect(currentScore).toBe('000:000');
     });
 
-    xit('adds one to team A score', () => {
+    it('adds one to team A score', () => {
         const scoreboard = new ScoreKeeper();
 
-        const currentScore = scoreboard.scoreTeamA1();
+        scoreboard.scoreTeamA1();
+
+        const currentScore = scoreboard.getScore();
 
         expect(currentScore).toBe('001:000');
     });

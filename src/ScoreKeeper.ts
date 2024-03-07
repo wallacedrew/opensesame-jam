@@ -1,3 +1,5 @@
+import { ScoreFormatter } from "./ScoreFormatter";
+
 export class ScoreKeeper {
   private teamAScore: number;
 
@@ -6,10 +8,14 @@ export class ScoreKeeper {
   }
 
   public getScore(): string {
-    // format score with leading zeros
+
     // concat 2 scores with ':'
 
-    return '000:000';
+    const formatter = new ScoreFormatter();
+
+    const scoreA = formatter.formatScore(this.teamAScore);
+
+    return `${scoreA}:000`;
   }
 
   public scoreTeamA1(): void {
