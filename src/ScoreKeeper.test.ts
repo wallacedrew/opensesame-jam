@@ -68,4 +68,15 @@ describe('ScoreKeeper', () => {
 
         expect(currentScore).toBe('000:003');
     });
+
+    it('displays 000 if the score is 1000', () => {
+
+      for(let i = 0; i < 1000; i++) {
+        scoreboard.scoreTeamA1();
+      }
+
+      const currentScore = scoreboard.getScore();
+
+      expect(currentScore).toBe('000:000');
+    })
 });

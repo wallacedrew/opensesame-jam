@@ -34,4 +34,11 @@ describe('ScoreFormatter', () => {
 
         expect(score).toBe('100');
     });
+
+    it('format 1000 points with to return 000', () => {
+
+        const score = scoreFormatter.formatScore(1000);
+
+        expect(score).toBe('000');
+    });
 });
