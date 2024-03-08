@@ -26,7 +26,7 @@ describe('ScoreFormatter', () => {
         const score = scoreFormatter.formatScore(10);
 
         expect(score).toBe('010');
-    })
+    });
 
     it('format 100 points with leading zeros to 3 characters', () => {
 
