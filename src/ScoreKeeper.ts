@@ -1,29 +1,5 @@
 import {ScoreFormatter} from './ScoreFormatter';
 
-class Team {
-    private teamScore;
-
-    constructor() {
-        this.teamScore = 0;
-    }
-
-    public foulShot(): void {
-        this.teamScore += 1;
-    }
-
-    public layUp(): void {
-        this.teamScore += 2;
-    }
-
-    public threePointer(): void {
-        this.teamScore += 3;
-    }
-
-    public score(): number {
-        return this.teamScore;
-    }
-}
-
 export class ScoreKeeper {
     private teamA: Team;
     private teamBScore: number;
@@ -76,4 +52,28 @@ export class ScoreKeeper {
         return value += 3;
     }
 
+}
+
+class Team {
+    private teamScore;
+
+    constructor() {
+        this.teamScore = 0;
+    }
+
+    public foulShot(): void {
+        this.teamScore += 1;
+    }
+
+    public layUp(): void {
+        this.teamScore += 2;
+    }
+
+    public threePointer(): void {
+        this.teamScore += 3;
+    }
+
+    public score(): number {
+        return this.teamScore;
+    }
 }
