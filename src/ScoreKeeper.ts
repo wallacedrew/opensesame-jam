@@ -25,12 +25,10 @@ class Team {
 }
 
 export class ScoreKeeper {
-    private teamAScore: number;
     private teamA: Team;
     private teamBScore: number;
 
     constructor() {
-        this.teamAScore = 0;
         this.teamA = new Team();
         this.teamBScore = 0;
     }
@@ -43,17 +41,14 @@ export class ScoreKeeper {
     }
 
     public scoreTeamA1(): void {
-        this.teamAScore = this.foulShot(this.teamAScore);
         this.teamA.foulShot();
     }
 
     public scoreTeamA2(): void {
-        this.teamAScore = this.layUp(this.teamAScore);
         this.teamA.layUp();
     }
 
     public scoreTeamA3(): void {
-        this.teamAScore = this.three(this.teamAScore);
         this.teamA.threePointer();
     }
 
