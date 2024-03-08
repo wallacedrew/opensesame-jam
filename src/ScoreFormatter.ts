@@ -6,14 +6,18 @@ export class ScoreFormatter {
         if (this.scoreIsOverLimit(score)) {
             score = this.resetAtLimit(score);
         }
-        return `${score}`.padStart(this.SCORE_LENGTH, '0');
+        return this.addLeadingZeros(score);
+    }
+
+    private scoreIsOverLimit(score: number) {
+        return score > this.SCORE_LIMIT;
     }
 
     private resetAtLimit(score: number): number {
         return score % (this.SCORE_LIMIT + 1);
     }
 
-    private scoreIsOverLimit(score: number) {
-        return score > this.SCORE_LIMIT;
+    private addLeadingZeros(score: number) {
+        return `${score}`.padStart(this.SCORE_LENGTH, '0');
     }
 }
