@@ -17,26 +17,39 @@ export class ScoreKeeper {
     }
 
     public scoreTeamA1(): void {
-        this.teamAScore += 1;
+        this.teamAScore = this.foulShot(this.teamAScore);
     }
 
     public scoreTeamA2(): void {
-        this.teamAScore += 2;
+        this.teamAScore = this.layUp(this.teamAScore);
     }
 
     public scoreTeamA3(): void {
-        this.teamAScore += 3;
+        this.teamAScore = this.three(this.teamAScore);
     }
 
     public scoreTeamB1(): void {
-        this.teamBScore += 1;
+        this.teamBScore = this.foulShot(this.teamBScore);
     }
 
     public scoreTeamB2(): void {
-        this.teamBScore += 2;
+        this.teamBScore = this.layUp(this.teamBScore);
     }
 
     public scoreTeamB3(): void {
-        this.teamBScore += 3;
+        this.teamBScore = this.three(this.teamBScore);
     }
+
+    private foulShot(value: number): number {
+        return value += 1;
+    }
+
+    private layUp(value: number) {
+        return value += 2;
+    }
+
+    private three(value: number): number {
+        return value += 3;
+    }
+
 }
