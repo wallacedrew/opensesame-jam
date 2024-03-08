@@ -1,8 +1,20 @@
 export class ScoreFormatter {
+    private readonly SCORE_LIMIT = 999;
+    private readonly SCORE_LENGTH = 3;
+
     public formatScore(score: number): string {
-        if (score > 999) {
-            score = score % 1000;
+        score = this.resetAtLimit(score);
+        return `${score}`.padStart(this.SCORE_LENGTH, '0');
+    }
+
+    private resetAtLimit(score: number) {
+        if (this.scoreIsOverLimit(score)) {
+            score = score % (this.SCORE_LIMIT + 1);
         }
-        return `${score}`.padStart(3, '0');
+        return score;
+    }
+
+    private scoreIsOverLimit(score: number) {
+        return score > this.SCORE_LIMIT;
     }
 }
