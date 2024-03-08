@@ -48,4 +48,13 @@ describe('ScoreKeeper', () => {
         }
         expect(keeper.getScore()).toBe('000:000');
     });
+
+    it('displays score tied at 999', () => {
+        for (let i = 0; i < 333; i++) {
+            keeper.scoreTeamA3();
+            keeper.scoreTeamB3();
+        }
+        expect(keeper.getScore()).toBe('999:999');
+    });
+
 });
