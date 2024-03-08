@@ -1,34 +1,29 @@
 import {ScoreFormatter} from './ScoreFormatter';
 
 describe('ScoreFormatter', () => {
-    let scoreFormatter: ScoreFormatter;
+    let formatter: ScoreFormatter;
 
     beforeEach(() => {
-        scoreFormatter = new ScoreFormatter();
+        formatter = new ScoreFormatter();
     });
 
     it('format 1 point with leading zeros to 3 characters', () => {
-        const score = scoreFormatter.format(1);
-        expect(score).toBe('001');
+        expect(formatter.format(1)).toBe('001');
     });
 
     it('format 2 points with leading zeros to 3 characters', () => {
-        const score = scoreFormatter.format(2);
-        expect(score).toBe('002');
+        expect(formatter.format(2)).toBe('002');
     });
 
     it('format 10 points with leading zeros to 3 characters', () => {
-        const score = scoreFormatter.format(10);
-        expect(score).toBe('010');
+        expect(formatter.format(10)).toBe('010');
     });
 
     it('format 100 points with leading zeros to 3 characters', () => {
-        const score = scoreFormatter.format(100);
-        expect(score).toBe('100');
+        expect(formatter.format(100)).toBe('100');
     });
 
     it('format 1000 points with to return 000', () => {
-        const score = scoreFormatter.format(1000);
-        expect(score).toBe('000');
+        expect(formatter.format(1000)).toBe('000');
     });
 });
