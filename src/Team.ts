@@ -6,22 +6,22 @@ export class Team {
     }
 
     public foulShot(): void {
-        this.incrementBy(1);
+        this.scorePlus(1);
     }
 
     public layUp(): void {
-        this.incrementBy(2);
+        this.scorePlus(2);
     }
 
     public threePointer(): void {
-        this.incrementBy(3);
+        this.scorePlus(3);
     }
 
     public score(): number {
         return this.teamScore;
     }
 
-    private incrementBy(amount: number) {
+    private scorePlus(amount: number) {
         this.teamScore += amount;
     }
 }
