@@ -3,12 +3,6 @@ export class ScoreFormatter {
         if (score > 999) {
             score = score % 1000;
         }
-
-        if (score > 99) {
-            return `${score}`;
-        } else if (score > 9) {
-            return `0${score}`;
-        }
-        return `00${score}`;
+        return `${score}`.padStart(3, '0');
     }
 }
