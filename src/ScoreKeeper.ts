@@ -2,17 +2,17 @@ import {ScoreFormatter} from './ScoreFormatter';
 
 export class ScoreKeeper {
     private teamA: Team;
-    private teamBScore: number;
+    private teamB: Team;
 
     constructor() {
         this.teamA = new Team();
-        this.teamBScore = 0;
+        this.teamB = new Team();
     }
 
     public getScore(): string {
         const formatter = new ScoreFormatter();
         const scoreA = formatter.formatScore(this.teamA.score());
-        const scoreB = formatter.formatScore(this.teamBScore);
+        const scoreB = formatter.formatScore(this.teamB.score());
         return `${scoreA}:${scoreB}`;
     }
 
@@ -29,27 +29,15 @@ export class ScoreKeeper {
     }
 
     public scoreTeamB1(): void {
-        this.teamBScore = this.foulShot(this.teamBScore);
+        this.teamB.foulShot();
     }
 
     public scoreTeamB2(): void {
-        this.teamBScore = this.layUp(this.teamBScore);
+        this.teamB.layUp();
     }
 
     public scoreTeamB3(): void {
-        this.teamBScore = this.three(this.teamBScore);
-    }
-
-    private foulShot(value: number): number {
-        return value += 1;
-    }
-
-    private layUp(value: number): number {
-        return value += 2;
-    }
-
-    private three(value: number): number {
-        return value += 3;
+        this.teamB.threePointer();
     }
 
 }
