@@ -11,8 +11,8 @@ export class ScoreKeeper {
 
     public getScore(): string {
         const formatter = new ScoreFormatter();
-        const scoreA = formatter.formatScore(this.teamA.score());
-        const scoreB = formatter.formatScore(this.teamB.score());
+        const scoreA = formatter.format(this.teamA.score());
+        const scoreB = formatter.format(this.teamB.score());
         return `${scoreA}:${scoreB}`;
     }
 

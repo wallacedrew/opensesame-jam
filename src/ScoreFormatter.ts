@@ -2,7 +2,7 @@ export class ScoreFormatter {
     private readonly SCORE_LIMIT = 999;
     private readonly SCORE_LENGTH = 3;
 
-    public formatScore(score: number): string {
+    public format(score: number): string {
         score = this.resetAtLimit(score);
         return `${score}`.padStart(this.SCORE_LENGTH, '0');
     }
